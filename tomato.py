@@ -1,1 +1,1 @@
-print("fuck ye lets goooo")
+print("Here begis my coding journey!")
