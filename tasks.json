@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "title": "Room Renovation",
+        "done": false
+    },
+    {
+        "title": "Birthday Planning",
+        "done": false
+    },
+    {
+        "title": "Brush",
+        "done": true
+    }
+]

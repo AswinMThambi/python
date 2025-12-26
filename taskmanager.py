@@ -8,7 +8,7 @@ def load_task() :
 	except FileNotFoundError :
 		return []
 
-def save_task() :
+def save_task(tasks) :
 	with open(FILE_NAME,"w") as f :
 		json.dump(tasks,f,indent=4)
 
@@ -18,6 +18,7 @@ tasks = load_task()
 def add_task(title) :
 	task = {"title" : title,"done" : False}
 	tasks.append(task)
+	save_task(tasks)
 	print ("Task has been added successfully!\n")
 
 def view_tasks() :
@@ -36,6 +37,7 @@ def mark_as_done(task_number) :
 		return
 
 	tasks[task_number - 1]["done"] = True
+	save_task(tasks)
 	print ("Task marked as done!\n")
 
 while True :
