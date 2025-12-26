@@ -1,4 +1,19 @@
-tasks = []
+import json
+FILE_NAME = "tasks.json"
+
+def load_task() :
+	try :
+		with open(FILE_NAME,"r") as f :
+			return json.load(f)
+	except FileNotFoundError :
+		return []
+
+def save_task() :
+	with open(FILE_NAME,"w") as f :
+		json.dump(tasks,f,indent=4)
+
+
+tasks = load_task()
 
 def add_task(title) :
 	task = {"title" : title,"done" : False}
